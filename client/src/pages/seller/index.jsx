@@ -9,7 +9,7 @@ function Index(){
   const router = useRouter();
   const [dashboardData, setDashboardData] = useState(undefined);
   useEffect(() => {
-    const getBuyerDashboardData = async () => {
+    const getBuyerDashboardData = async() => {
       const response = await axios.get(GET_SELLER_DASHBOARD_DATA, {
         withCredentials: true,
       });
