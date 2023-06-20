@@ -5,12 +5,7 @@ import {BiRightArrowAlt} from "react-icons/bi";
 import {FiClock, FiRefreshCcw} from "react-icons/fi";
 import {useStateProvider} from "../../context/StateContext";
 function Pricing() {
-  const [{ 
-		gigData, 
-		userInfo,
-	}, 
-	dispatch,
-] = useStateProvider();
+  const [{gigData, userInfo}, dispatch] = useStateProvider();
   const router = useRouter();
   return(
     <>

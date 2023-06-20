@@ -5,10 +5,7 @@ import React, {useEffect, useState} from "react";
 import {useStateProvider} from "../../context/StateContext";
 function Reviews(){
   const [{gigData}] = useStateProvider();
-  const [
-		averageRatings, 
-		setAverageRatings,
-	] = useState("0");
+  const [averageRatings, setAverageRatings] = useState("0");
   useEffect(() => {
     if(gigData && gigData.reviews.length){
       let avgRating = 0;

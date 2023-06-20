@@ -6,14 +6,8 @@ import {ADD_REVIEW} from "../../utils/constants";
 import {reducerCases} from "../../context/constants";
 import {useStateProvider} from "../../context/StateContext";
 function AddReview(){
-  const [
-		{}, 
-		dispatch,
-	] = useStateProvider();
-  const [
-		data, 
-		setData
-	] = useState({
+  const [{},  dispatch] = useStateProvider();
+  const [data, setData] = useState({
 		reviewText: "", 
 		rating: 0,
 	});

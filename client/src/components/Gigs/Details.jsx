@@ -6,14 +6,8 @@ import Reviews from "../../components/Gigs/Reviews";
 import AddReview from "../../components/Gigs/AddReview";
 import {useStateProvider} from "../../context/StateContext";
 function Details(){
-  const [{ 
-		gigData, 
-		hasOrdered,
-	}] = useStateProvider();
-  const [
-		currentImage, 
-		setCurrentImage,
-	] = useState("");
+  const [{gigData, hasOrdered}] = useStateProvider();
+  const [currentImage, setCurrentImage] = useState("");
   useEffect(() => {
     if(gigData){
       setCurrentImage(gigData.images[0]);
