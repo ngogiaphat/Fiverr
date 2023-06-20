@@ -55,7 +55,9 @@ export const getSellerData = async(req, res, next) => {
         },
       });
       const {
-        _sum: { price: dailyRevenue },
+        _sum: { 
+					price: dailyRevenue,
+				},
       } = await prisma.orders.aggregate({
         where: {
           gig: {

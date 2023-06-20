@@ -7,7 +7,6 @@ export const addMessage = async(req, res, next) => {
         data: {
           sender: {
             connect: {
-              // @ts-expect-error
               id: parseInt(req.userId),
             },
           },
@@ -75,14 +74,14 @@ export const getMessages = async(req, res, next) => {
     }
     return res.status(400).send("Order id is required.");
   } 
-	catch (err){
+	catch(err){
     console.log(err);
     return res.status(500).send("Internal Server Error");
   };
 };
 export const getUnreadMessages = async(req, res, next) => {
   try {
-    if (req.userId) {
+    if(req.userId){
       const prisma = new PrismaClient();
       const messages = await prisma.message.findMany({
         where: {
@@ -97,7 +96,7 @@ export const getUnreadMessages = async(req, res, next) => {
     }
     return res.status(400).send("User id is required.");
   } 
-	catch (err){
+	catch(err){
     console.log(err);
     return res.status(500).send("Internal Server Error");
   };
@@ -118,7 +117,7 @@ export const markAsRead = async(req, res, next) => {
     }
     return res.status(400).send("User id and message Id is required.");
   } 
-	catch (err){
+	catch(err){
     console.log(err);
     return res.status(500).send("Internal Server Error");
   };

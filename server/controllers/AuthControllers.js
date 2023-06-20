@@ -16,10 +16,7 @@ const createToken = (email, userId) => {
 export const signup = async(req, res, next) => {
   try {
     const prisma = new PrismaClient();
-    const { 
-			email, 
-			password,
-		} = req.body;
+    const {email, password} = req.body;
     if(email && password){
       const user = await prisma.user.create({
         data: {
@@ -38,7 +35,8 @@ export const signup = async(req, res, next) => {
 		else {
       return res.status(400).send("Email and Password Required");
     }
-  } catch (err) {
+  } 
+	catch(err){
     console.log(err);
     if (err instanceof Prisma.PrismaClientKnownRequestError) {
       if(err.code === "P2002"){
@@ -55,10 +53,7 @@ export const signup = async(req, res, next) => {
 export const login = async (req, res, next) => {
   try {
     const prisma = new PrismaClient();
-    const { 
-			email, 
-			password,
-		} = req.body;
+    const {email, password} = req.body;
     if (email && password) {
       const user = await prisma.user.findUnique({
         where: {
@@ -88,7 +83,6 @@ export const login = async (req, res, next) => {
     return res.status(500).send("Internal Server Error");
   };
 };
-
 export const getUserInfo = async (req, res, next) => {
   try {
     if(req?.userId){
@@ -118,10 +112,7 @@ export const getUserInfo = async (req, res, next) => {
 export const setUserInfo = async (req, res, next) => {
   try {
     if(req?.userId){
-      const { 
-				userName, 
-				fullName, description,
-			} = req.body;
+      const {userName, fullName, description} = req.body;
       if(userName && fullName && description){
         const prisma = new PrismaClient();
         const userNameValid = await prisma.user.findUnique({

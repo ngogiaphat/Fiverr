@@ -14,16 +14,7 @@ export const addGig = async(req, res, next) => {
         fileNames.push(date + req.files[file].originalname);
       });
       if(req.query){
-        const {
-          title,
-          description,
-          category,
-          features,
-          price,
-          revisions,
-          time,
-          shortDesc,
-        } = req.query;
+        const {title, description, category, features, price, revisions, time, shortDesc} = req.query;
         const prisma = new PrismaClient();
         await prisma.gigs.create({
           data: {
@@ -35,7 +26,11 @@ export const addGig = async(req, res, next) => {
             price: parseInt(price),
             shortDesc,
             revisions: parseInt(revisions),
-            createdBy: { connect: { id: req.userId } },
+            createdBy: { 
+							connect: { 
+								id: req.userId 
+							},
+						},
             images: fileNames,
           },
         });
