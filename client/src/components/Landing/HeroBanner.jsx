@@ -4,18 +4,10 @@ import {IoSearchOutline} from "react-icons/io5";
 import React, {useEffect, useState} from "react";
 function HomeBanner(){
   const router = useRouter();
-  const [
-		image, 
-		setImage,
-	] = useState(1);
-  const [
-		searchData, 
-		setSearchData,
-	] = useState("");
+  const [image, setImage] = useState(1);
+  const [searchData, setSearchData] = useState("");
   useEffect(() => {
-    const interval = setInterval(() => setImage(image >= 6 ? 1 : image + 1),
-      10000,
-    );
+    const interval = setInterval(() => setImage(image >= 6 ? 1 : image + 1), 10000);
     return() => clearInterval(interval);
   }, [image]);
   return(
