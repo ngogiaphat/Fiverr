@@ -21,8 +21,8 @@ function Pricing() {
               <h4 className = "text-md font-normal text-[#74767e]">
                 {gigData.shortDesc}
               </h4>
-              <h6 className="font-medium text-lg">
-								${gigData.price}
+              <h6 className = "font-medium text-lg">
+								${gigData.price};
 							</h6>
             </div>
             <div>
@@ -30,7 +30,7 @@ function Pricing() {
                 <div className = "flex items-center gap-2">
                   <FiClock className = "text-xl"/>
                   <span>
-										{gigData.deliveryTime} Days Delivery
+										{gigData.deliveryTime} Days Delivery;
 									</span>
                 </div>
                 <div className = "flex items-center gap-2">
@@ -47,7 +47,7 @@ function Pricing() {
                 <li key = {feature} className = "flex items-center gap-3">
                   <BsCheckLg classNam e= "text-[#1DBF73] text-lg"/>
                   <span className = "text-[#4f5156]">
-										{feature}
+										{feature};
 									</span>
                 </li>
               ))}
@@ -70,7 +70,7 @@ function Pricing() {
 								</span>
                 <BiRightArrowAlt className = "text-2xl absolute right-4"/>
               </button>
-            )}
+            )};
           </div>
           {gigData.userId !== userInfo.id && (
             <div className = "flex items-center justify-center mt-5">
@@ -78,9 +78,9 @@ function Pricing() {
                 Contact Me
               </button>
             </div>
-          )}
+          )};
         </div>
-      )}
+      )};
     </>
   );
 };

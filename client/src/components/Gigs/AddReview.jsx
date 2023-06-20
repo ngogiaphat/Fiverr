@@ -26,7 +26,7 @@ function AddReview(){
         { ...data},
         { 
 					withCredentials: true,
-				}
+				},
       );
       if(response.status === 201){
         setData({ 
@@ -56,7 +56,7 @@ function AddReview(){
         <div className = "flex gap-1">
           {[1, 2, 3, 4, 5].map((num) => (
 						<FaStar key = {num} className = {`cursor-pointer ${data.rating >= num ? "text-yellow-400" : "text-gray-300" }`} onClick= {() => setData({...data, rating: num})}/>
-					))}
+					))};
         </div>
         <button className = "flex items-center bg-[#1DBF73] text-white py-2 justify-center text-md relative rounded px-5" onClick = {addReview}>
           Add Review

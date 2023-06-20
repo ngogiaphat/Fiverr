@@ -35,7 +35,7 @@ function Details(){
       {gigData && currentImage !== "" && (
         <div className = "col-span-2 flex flex-col gap-3">
           <h2 className = "text-2xl font-bold text-[#404145] mb-1">
-            {gigData.title}
+            {gigData.title};
           </h2>
           <div className = "flex items-center gap-2">
             <div>
@@ -44,30 +44,30 @@ function Details(){
               ) : (
                 <div className = "bg-purple-500 h-10 w-10 flex items-center justify-center rounded-full relative">
                   <span className = "text-xl text-white">
-                    {gigData.createdBy.email[0].toUpperCase()}
+                    {gigData.createdBy.email[0].toUpperCase()};
                   </span>
                 </div>
-              )}
+              )};
             </div>
             <div className = "flex gap-2 items-center">
               <h4 className = "text-[#27272a] font-bold">
-                {gigData.createdBy.fullName}
+                {gigData.createdBy.fullName};
               </h4>
               <h6 className="text-[#74767e]">
-								@{gigData.createdBy.username}
+								@{gigData.createdBy.username};
 							</h6>
             </div>
             <div className = "flex items-center gap-1">
               <div className = "flex">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <FaStar key = {star} className = {`cursor-pointer ${Math.ceil(averageRatings) >= star ? "text-yellow-400" : "text-gray-300"}`}/>
-                ))}
+                ))};
               </div>
               <span className = "text-yellow-500">
-								{averageRatings}
+								{averageRatings};
 							</span>
               <span className = "text-[#27272a]">
-								({gigData.reviews.length})
+								({gigData.reviews.length});
 							</span>
             </div>
           </div>
@@ -80,7 +80,7 @@ function Details(){
 								<Image src = {HOST + "/uploads/" + image} alt = "gig" height = {100} width = {100}
 									key = {image} onClick = {() => setCurrentImage(image)} className = {`${currentImage === image ? "" : "blur-sm"} cursor-pointer transition-all duration-500`}
 								/>
-              ))}
+              ))};
             </div>
           </div>
           <div>
@@ -104,7 +104,7 @@ function Details(){
                 ) : (
                   <div className = "bg-purple-500 h-10 w-10 flex items-center justify-center rounded-full relative">
                     <span className = "text-xl text-white">
-                      {gigData.createdBy.email[0].toUpperCase()}
+                      {gigData.createdBy.email[0].toUpperCase()};
                     </span>
                   </div>
                 )}
@@ -115,25 +115,25 @@ function Details(){
                     {gigData.createdBy.fullName}
                   </h4>
                   <span className = "text-[#74767e]">
-                    @{gigData.createdBy.username}
+                    @{gigData.createdBy.username};
                   </span>
                 </div>
                 <div>
                   <p>
-										{gigData.createdBy.description}
+										{gigData.createdBy.description};
 									</p>
                 </div>
                 <div className = "flex items-center gap-1">
                   <div className = "flex text-yellow-500">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <FaStar key = {star} className = {`cursor-pointer ${Math.ceil(gigData.averageRating) >= star ? "text-yellow-400" : "text-gray-300"}`}/>
-                    ))}
+                    ))};
                   </div>
                   <span className = "text-yellow-500">
-                    {gigData.averageRating}
+                    {gigData.averageRating};
                   </span>
                   <span className = "text-[#74767e]">
-                    ({gigData.totalReviews})
+                    ({gigData.totalReviews});
                   </span>
                 </div>
               </div>
@@ -142,7 +142,7 @@ function Details(){
           <Reviews/>
           {hasOrdered && <AddReview/>}
         </div>
-      )}
+      )};
     </>
   );
 };
