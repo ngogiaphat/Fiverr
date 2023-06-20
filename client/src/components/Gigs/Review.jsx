@@ -39,9 +39,7 @@ function Reviews(){
             {gigData.reviews.map((review) => (
               <div className = "flex gap-3 border-t pt-6" key = {review.id}>
                 <div>
-                  {review.reviewer.profileImage ? (
-                    <Image src = {HOST + "/" + review.reviewer.profileImage} alt = "Profile" width = {40} height = {40} className = "rounded-full"/>
-                  ) : (
+                  {review.reviewer.profileImage ? (<Image src = {HOST + "/" + review.reviewer.profileImage} alt = "Profile" width = {40} height = {40} className = "rounded-full"/>) : (
                     <div className=  "bg-purple-500 h-10 w-10 flex items-center justify-center rounded-full relative">
                       <span className = "text-xl text-white">
                         {review.reviewer.email[0].toUpperCase()};
