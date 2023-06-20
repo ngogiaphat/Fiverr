@@ -9,10 +9,7 @@ function MessageContainer(){
   const router = useRouter();
   const {orderId} = router.query;
   const [{userInfo}] = useStateProvider();
-  const [
-		recipentId, 
-		setRecipentId
-	] = useState(undefined);
+  const [recipentId, setRecipentId] = useState(undefined);
   useEffect(() => {
     const getMessages = async() => {
       const {
