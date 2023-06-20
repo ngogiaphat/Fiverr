@@ -29,9 +29,7 @@ function Index(){
           <div className = "shadow-md h-max p-10 flex flex-col gap-5 min-w-96 w-96">
             <div className = "flex gap-5 justify-center items-center">
               <div>
-                {userInfo?.imageName ? (
-                  <Image src = {userInfo.imageName} alt = "Profile" width = {140} height = {140} className = "rounded-full"/>
-                ) : (
+                {userInfo?.imageName ? (<Image src = {userInfo.imageName} alt = "Profile" width = {140} height = {140} className = "rounded-full"/>) : (
                   <div className = "bg-purple-500 h-24 w-24 flex items-center justify-center rounded-full relative">
                     <span className = "text-5xl text-white">
                       {userInfo.email[0].toUpperCase()}
