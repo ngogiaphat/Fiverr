@@ -3,10 +3,7 @@ import React from "react";
 import Image from "next/image";
 function ImageUpload({files, setFile}){
   const {useState} = React;
-  const [
-		message, 
-		setMessage,
-	] = useState();
+  const [message, setMessage] = useState();
   const handleFile = (e) => {
     setMessage("");
     let file = e.target.files;

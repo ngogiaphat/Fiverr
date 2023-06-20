@@ -13,24 +13,10 @@ import {useStateProvider} from "../context/StateContext";
 function Navbar() {
   const [cookies] = useCookies();
   const router = useRouter();
-  const [
-		navFixed, 
-		setNavFixed,
-	] = useState(false);
-  const [
-		searchData, 
-		setSearchData,
-	] = useState("");
-  const [
-		isLoaded, 
-		setIsLoaded,
-	] = useState(false);
-  const [{ 
-			showLoginModal, 
-			showSignupModal, 
-			isSeller, userInfo, 
-		}, dispatch,
-	] = useStateProvider();
+  const [setNavFixed] = useState(false);
+  const [searchData, setSearchData] = useState("");
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [{showLoginModal, showSignupModal, isSeller, userInfo}, dispatch] = useStateProvider();
   const handleLogin = () => {
     if(showSignupModal){
       dispatch({
@@ -100,11 +86,12 @@ function Navbar() {
     };
   }, [router.pathname]);
   const handleOrdersNavigate = () => {
-    if(isSeller) router.push("/seller/orders");
+    if(isSeller) 
+		router.push("/seller/orders");
     router.push("/buyer/orders");
   };
   const handleModeSwitch = () => {
-    if (isSeller){
+    if(isSeller){
       dispatch({type: reducerCases.SWITCH_MODE});
       router.push("/buyer/orders");
     } 
@@ -131,7 +118,6 @@ function Navbar() {
               },
             }
           );
-
           let projectedUserInfo = {...user};
           if(user.image){
             projectedUserInfo = {

@@ -8,20 +8,10 @@ import {reducerCases} from "../context/constants";
 import {useStateProvider} from "../context/StateContext";
 import {LOGIN_ROUTE, SIGNUP_ROUTE} from "../utils/constants";
 function AuthWrapper({type}){
-  const [
-		cookies, 
-		setCookies,
-	] = useCookies();
-  const [{
-			showLoginModal, 
-			showSignupModal 
-		}, dispatch
-	] = useStateProvider();
+  const [cookies, setCookies] = useCookies();
+  const [{showLoginModal, showSignupModal}, dispatch] = useStateProvider();
   const router = useRouter();
-  const [
-		values, 
-		setValues,
-	] = useState({ 
+  const [values, setValues] = useState({ 
 		email: "", 
 		password: "",
 	});

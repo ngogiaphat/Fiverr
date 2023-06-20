@@ -3,25 +3,14 @@ import {PaymentElement, LinkAuthenticationElement, useStripe, useElements} from 
 export default function CheckoutForm(){
   const stripe = useStripe();
   const elements = useElements();
-  const [
-		email, 
-		setEmail,
-	] = useState("");
-  const [
-		message, 
-		setMessage,
-	] = useState(null);
-  const [
-		isLoading, 
-		setIsLoading,
-	] = useState(false);
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     if(!stripe){
       return;
     };
-    const clientSecret = new URLSearchParams(window.location.search).get(
-      "payment_intent_client_secret"
-    );
+    const clientSecret = new URLSearchParams(window.location.search).get("payment_intent_client_secret");
     if(!clientSecret){
       return;
     };
