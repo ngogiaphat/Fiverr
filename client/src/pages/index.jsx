@@ -19,9 +19,7 @@ function Index(){
 			<JoinFiverr/>
 			<FiverrBusiness/>
 			<PopularServices/>
-			{(showLoginModal || showSignupModal) && (
-				<AuthWrapper type = {showLoginModal ? "login" : "signup"}/>
-			)}
+			{(showLoginModal || showSignupModal) && (<AuthWrapper type = {showLoginModal ? "login" : "signup"}/>)}
 		</div>
 	);
 };
