@@ -9,7 +9,7 @@ import {StateProvider} from "../context/StateContext";
 import reducer, {initialState} from "../context/StateReducers";
 export default function App({Component, pageProps}){
 	const router = useRouter();
-	const [cookies] = useCoookies();
+	const [cookies] = useCookies();
 	useEffect(() => {
 		if(router.pathname.includes("/seller") || router.pathname.includes("/buyer")){
 			if(!cookies.jwt){
