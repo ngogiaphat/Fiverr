@@ -10,7 +10,7 @@ import React, {useEffect, useState} from "react";
 import {reducerCases} from "../context/constants";
 import {GET_USER_INFO, HOST} from "../utils/constants";
 import {useStateProvider} from "../context/StateContext";
-function Navbar() {
+function Navbar(){
   const [cookies] = useCookies();
   const router = useRouter();
   const [setNavFixed] = useState(false);
@@ -30,7 +30,7 @@ function Navbar() {
     });
   };
   const handleSignup = () => {
-    if (showLoginModal) {
+    if(showLoginModal){
       dispatch({
         type: reducerCases.TOGGLE_LOGIN_MODAL,
         showLoginModal: false,
@@ -102,7 +102,7 @@ function Navbar() {
   };
   useEffect(() => {
     if(cookies.jwt && !userInfo){
-      const getUserInfo = async () => {
+      const getUserInfo = async() => {
         try {
           const {
             data: { 
@@ -131,7 +131,7 @@ function Navbar() {
             userInfo: projectedUserInfo,
           });
           setIsLoaded(true);
-          console.log({ user });
+          console.log({user});
           if(user.isProfileSet === false){
             router.push("/profile");
           };
@@ -146,10 +146,7 @@ function Navbar() {
       setIsLoaded(true);
     }
   }, [cookies, userInfo, dispatch]);
-  const [
-		isContextMenuVisible, 
-		setIsContextMenuVisible,
-	] = useState(false);
+  const [isContextMenuVisible,  setIsContextMenuVisible] = useState(false);
   useEffect(() => {
     const clickListener = (e) => {
       e.stopPropagation();
